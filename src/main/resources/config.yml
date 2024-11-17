@@ -1,0 +1,14 @@
+message: "You must be at least level %level% to use this item!"
+items:
+  worn_chainmail:
+    id: CHAINMAIL_CHESTPLATE
+    display_name: "&l&3○&r &3Worn Chainmail"
+    lv: 100
+  rusty_greatsword:
+    id: IRON_SWORD
+    display_name: '&l&3○&r &3Rusty Greatsword'
+    lv: 90
+  fyrgons_ring_of_fire:
+    id: TNT_MINECART
+    display_name: '&6[ III ] &l&cFYRGON`S RING OF FIRE'
+    lv: 100

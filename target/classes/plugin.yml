@@ -1,0 +1,9 @@
+name: LevelRestrictionPlugin
+version: '1.0-SNAPSHOT'
+main: com.maks.levelrestrictionplugin.LevelRestrictionPlugin
+api-version: '1.20'
+commands:
+  items_lvl:
+    description: Reloads the items.yml configuration
+    usage: /<command> reload
+    permission: items_lvl.reload

@@ -1,0 +1,28 @@
+package com.maks.levelrestrictionplugin;
+
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class LevelRestrictionPlugin extends JavaPlugin {
+
+    private ConfigManager configManager;
+
+    @Override
+    public void onEnable() {
+        // Inicjalizacja ConfigManager
+        configManager = new ConfigManager(this);
+
+        // Rejestracja listenerów
+        getServer().getPluginManager().registerEvents(new AttackListener(configManager), this);
+        getServer().getPluginManager().registerEvents(new EquipListener(configManager), this);
+        getServer().getPluginManager().registerEvents(new AccessoryListener(configManager), this);
+        getServer().getPluginManager().registerEvents(new ArmorEquipListener(configManager), this);
+
+        getLogger().info("LevelRestrictionPlugin has been enabled!");
+    }
+
+
+    @Override
+    public void onDisable() {
+        // Logika wyłączania pluginu (jeśli potrzebna)
+    }
+}

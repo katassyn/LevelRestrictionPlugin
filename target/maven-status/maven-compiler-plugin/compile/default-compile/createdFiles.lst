@@ -1,0 +1,7 @@
+com\maks\levelrestrictionplugin\ArmorEquipListener.class
+com\maks\levelrestrictionplugin\ConfigManager.class
+com\maks\levelrestrictionplugin\AttackListener.class
+com\maks\levelrestrictionplugin\LevelRestrictionPlugin.class
+com\maks\levelrestrictionplugin\RestrictedItem.class
+com\maks\levelrestrictionplugin\AccessoryListener.class
+com\maks\levelrestrictionplugin\EquipListener.class

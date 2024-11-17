@@ -1,0 +1,6 @@
+items:
+  worn_chainmail:
+    id: chainmail_chestplate
+    display_name: "&l&3○&r &3Worn Chainmail"
+    lv: 10
+    message: "You must be at least level %level% to use this item!"
