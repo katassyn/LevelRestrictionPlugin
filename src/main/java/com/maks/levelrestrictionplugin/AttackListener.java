@@ -27,7 +27,7 @@ public class AttackListener implements Listener {
             return;
         }
 
-        Bukkit.getLogger().info("Player " + player.getName() + " attacked with item: " + itemInHand.getType());
+      ///  Bukkit.getLogger().info("Player " + player.getName() + " attacked with item: " + itemInHand.getType());
 
         for (RestrictedItem restrictedItem : configManager.getRestrictedItems()) {
             if (restrictedItem.matches(itemInHand)) {
