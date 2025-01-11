@@ -1,6 +1,5 @@
 package com.maks.levelrestrictionplugin;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -21,7 +20,6 @@ public class RestrictedItem {
         this.requiredLevel = requiredLevel;
     }
 
-
     public boolean matches(ItemStack item) {
         if (item == null || item.getType() != material) {
             return false;
@@ -30,19 +28,13 @@ public class RestrictedItem {
         if (meta == null || !meta.hasDisplayName()) {
             return false;
         }
+        // Porównujemy wyłącznie tekst pozbawiony kolorów,
+        // aby uniknąć problemów z różnymi kodami kolorów.
         String itemDisplayName = ChatColor.stripColor(meta.getDisplayName());
         String expectedDisplayName = ChatColor.stripColor(displayName);
-        boolean matches = itemDisplayName.equals(expectedDisplayName);
-        // Wiadomość debugująca
-        if (matches) {
-            Bukkit.getLogger().info("Item matched: " + itemDisplayName);
-        } else {
-            Bukkit.getLogger().info("Item did not match. Expected: " + expectedDisplayName + ", Found: " + itemDisplayName);
-        }
-        return matches;
+
+        return itemDisplayName.equals(expectedDisplayName);
     }
-
-
 
     public int getRequiredLevel() {
         return requiredLevel;

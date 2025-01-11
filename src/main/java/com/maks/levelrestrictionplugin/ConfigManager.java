@@ -1,6 +1,5 @@
 package com.maks.levelrestrictionplugin;
 
-import org.bukkit.ChatColor;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 
@@ -34,8 +33,7 @@ public class ConfigManager {
                     if (id != null && displayName != null) {
                         RestrictedItem restrictedItem = new RestrictedItem(id, displayName, level);
                         restrictedItems.add(restrictedItem);
-                        // Dodajemy wiadomość debugującą
-                        plugin.getLogger().info("Loaded restricted item: " + key + " (Material: " + id + ", DisplayName: " + displayName + ", Level: " + level + ")");
+                        // Ewentualnie można tu zostawić logi ostrzegające o ewentualnych błędach
                     } else {
                         plugin.getLogger().warning("Invalid item configuration for: " + key);
                     }
@@ -45,7 +43,6 @@ public class ConfigManager {
             plugin.getLogger().warning("No items section found in config.yml!");
         }
     }
-
 
     public List<RestrictedItem> getRestrictedItems() {
         return restrictedItems;
