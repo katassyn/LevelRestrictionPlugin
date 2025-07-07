@@ -3,7 +3,10 @@ package com.maks.levelrestrictionplugin;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.inventory.*;
+import org.bukkit.event.inventory.ClickType;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryDragEvent;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.ItemStack;
 
 public class ArmorEquipListener implements Listener {
@@ -16,41 +19,51 @@ public class ArmorEquipListener implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
-        // Sprawdź, czy kliknął gracz
         if (!(event.getWhoClicked() instanceof Player)) {
             return;
         }
+
         Player player = (Player) event.getWhoClicked();
 
-        // Sprawdź, czy kliknięcie dotyczy zakładania zbroi
-        if (event.getSlotType() == InventoryType.SlotType.ARMOR || event.getSlotType() == InventoryType.SlotType.QUICKBAR || event.getSlotType() == InventoryType.SlotType.CONTAINER) {
+        // Sprawdzamy tylko gdy kliknięcie dotyczy slotu zbroi (sloty 5-8)
+        if (event.getSlotType() == InventoryType.SlotType.ARMOR) {
             ItemStack cursorItem = event.getCursor();
-            ItemStack currentItem = event.getCurrentItem();
 
-            // Zakładanie zbroi przez przeciąganie
-            if (cursorItem != null && isArmor(cursorItem)) {
-                if (isRestrictedItem(player, cursorItem)) {
+            // Przypadek 1: Gracz próbuje położyć przedmiot ze swojego kursora na slot zbroi
+            if (cursorItem != null && !cursorItem.getType().isAir() && isArmor(cursorItem)) {
+                if (cannotEquip(player, cursorItem)) {
                     event.setCancelled(true);
                     sendMessage(player, cursorItem);
-                }
-            }
-
-            // Zakładanie zbroi przez kliknięcie na slot zbroi
-            if (currentItem != null && isArmor(currentItem) && event.getClick().isShiftClick()) {
-                if (isRestrictedItem(player, currentItem)) {
-                    event.setCancelled(true);
-                    sendMessage(player, currentItem);
+                    return;
                 }
             }
         }
 
-        // Używanie klawiszy numerycznych
-        if (event.getClick() == ClickType.NUMBER_KEY) {
+        // Przypadek 2: Shift+klik na zbroję w ekwipunku (automatyczne zakładanie)
+        if (event.getClick().isShiftClick() && event.getCurrentItem() != null) {
+            ItemStack clickedItem = event.getCurrentItem();
+
+            if (isArmor(clickedItem) && event.getSlotType() != InventoryType.SlotType.ARMOR) {
+                // Sprawdź czy slot docelowy jest wolny
+                int armorSlot = getArmorSlot(clickedItem);
+                if (armorSlot != -1 && player.getInventory().getItem(armorSlot) == null) {
+                    if (cannotEquip(player, clickedItem)) {
+                        event.setCancelled(true);
+                        sendMessage(player, clickedItem);
+                        return;
+                    }
+                }
+            }
+        }
+
+        // Przypadek 3: Używanie klawiszy numerycznych na slotach zbroi
+        if (event.getClick() == ClickType.NUMBER_KEY && event.getSlotType() == InventoryType.SlotType.ARMOR) {
             ItemStack hotbarItem = player.getInventory().getItem(event.getHotbarButton());
             if (hotbarItem != null && isArmor(hotbarItem)) {
-                if (isRestrictedItem(player, hotbarItem)) {
+                if (cannotEquip(player, hotbarItem)) {
                     event.setCancelled(true);
                     sendMessage(player, hotbarItem);
+                    return;
                 }
             }
         }
@@ -58,19 +71,21 @@ public class ArmorEquipListener implements Listener {
 
     @EventHandler
     public void onInventoryDrag(InventoryDragEvent event) {
-        // Sprawdź, czy przeciąganie dotyczy slotów zbroi
         if (!(event.getWhoClicked() instanceof Player)) {
             return;
         }
+
         Player player = (Player) event.getWhoClicked();
 
+        // Sprawdzamy tylko gdy przeciąganie obejmuje sloty zbroi
         for (int slot : event.getRawSlots()) {
-            if (slot >= 5 && slot <= 8) { // Sloty zbroi
+            if (slot >= 5 && slot <= 8) { // Sloty zbroi w ekwipunku gracza
                 ItemStack draggedItem = event.getOldCursor();
                 if (draggedItem != null && isArmor(draggedItem)) {
-                    if (isRestrictedItem(player, draggedItem)) {
+                    if (cannotEquip(player, draggedItem)) {
                         event.setCancelled(true);
                         sendMessage(player, draggedItem);
+                        return;
                     }
                 }
             }
@@ -78,14 +93,26 @@ public class ArmorEquipListener implements Listener {
     }
 
     private boolean isArmor(ItemStack item) {
-        if (item == null) {
-            return false;
-        }
+        if (item == null) return false;
         String typeName = item.getType().name();
-        return typeName.endsWith("_HELMET") || typeName.endsWith("_CHESTPLATE") || typeName.endsWith("_LEGGINGS") || typeName.endsWith("_BOOTS");
+        return typeName.endsWith("_HELMET") || typeName.endsWith("_CHESTPLATE") || 
+               typeName.endsWith("_LEGGINGS") || typeName.endsWith("_BOOTS") ||
+               typeName.equals("ELYTRA") || typeName.equals("TURTLE_HELMET");
     }
 
-    private boolean isRestrictedItem(Player player, ItemStack item) {
+    private int getArmorSlot(ItemStack item) {
+        if (item == null) return -1;
+        String typeName = item.getType().name();
+
+        if (typeName.endsWith("_HELMET") || typeName.equals("TURTLE_HELMET")) return 39;
+        if (typeName.endsWith("_CHESTPLATE") || typeName.equals("ELYTRA")) return 38;
+        if (typeName.endsWith("_LEGGINGS")) return 37;
+        if (typeName.endsWith("_BOOTS")) return 36;
+
+        return -1;
+    }
+
+    private boolean cannotEquip(Player player, ItemStack item) {
         for (RestrictedItem restrictedItem : configManager.getRestrictedItems()) {
             if (restrictedItem.matches(item)) {
                 int requiredLevel = restrictedItem.getRequiredLevel();
@@ -97,14 +124,13 @@ public class ArmorEquipListener implements Listener {
     }
 
     private void sendMessage(Player player, ItemStack item) {
-        int requiredLevel = 0;
         for (RestrictedItem restrictedItem : configManager.getRestrictedItems()) {
             if (restrictedItem.matches(item)) {
-                requiredLevel = restrictedItem.getRequiredLevel();
-                break;
+                int requiredLevel = restrictedItem.getRequiredLevel();
+                String message = configManager.getMessage().replace("%level%", String.valueOf(requiredLevel));
+                player.sendMessage(message);
+                return;
             }
         }
-        String message = configManager.getMessage().replace("%level%", String.valueOf(requiredLevel));
-        player.sendMessage(message);
     }
 }

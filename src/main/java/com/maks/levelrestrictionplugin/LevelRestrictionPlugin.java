@@ -13,14 +13,16 @@ public class LevelRestrictionPlugin extends JavaPlugin {
 
         // Rejestracja listenerów
         getServer().getPluginManager().registerEvents(new ArmorEquipListener(configManager), this);
-        getServer().getPluginManager().registerEvents(new EquipListener(configManager), this);
-        getServer().getPluginManager().registerEvents(new CheckItemsOnJoinListener(configManager), this);
+        getServer().getPluginManager().registerEvents(new AttackListener(configManager), this);
+        getServer().getPluginManager().registerEvents(new WeaponUseListener(configManager), this);
+        // Opcjonalnie: CheckItemsOnJoinListener - jeśli chcesz sprawdzać przy logowaniu
+        // getServer().getPluginManager().registerEvents(new CheckItemsOnJoinListener(configManager), this);
 
         getLogger().info("LevelRestrictionPlugin has been enabled!");
     }
 
     @Override
     public void onDisable() {
-        // Logika wyłączania pluginu (jeśli potrzebna)
+        getLogger().info("LevelRestrictionPlugin has been disabled!");
     }
 }
