@@ -1,14 +1,370 @@
 message: "You must be at least level %level% to use this item!"
 items:
-  worn_chainmail:
-    id: CHAINMAIL_CHESTPLATE
-    display_name: "&l&3○&r &3Worn Chainmail"
-    lv: 100
-  rusty_greatsword:
-    id: IRON_SWORD
-    display_name: '&l&3○&r &3Rusty Greatsword'
+  fiery_tracks_of_grimmag_bloodshed:
+    id: diamond_boots
+    display_name: "&6[ III ] &eFiery Tracks of Grimmor"
+    lv: 50
+  fiery_tracks_of_grimmag_bloodshed+1:
+    id: diamond_boots
+    display_name: "&6[ III ] &eFiery Tracks of Grimmor"
+    lv: 50
+  fiery_tracks_of_grimmag_bloodshed+2:
+    id: diamond_boots
+    display_name: "&6[ III ] &eFiery Tracks of Grimmor"
+    lv: 50
+  fiery_tracks_of_grimmag_bloodshed+3:
+    id: diamond_boots
+    display_name: "&6[ III ] &eFiery Tracks of Grimmor"
+    lv: 50
+  fiery_tracks_of_grimmag_bloodshed+4:
+    id: diamond_boots
+    display_name: "&6[ III ] &eFiery Tracks of Grimmor"
+    lv: 50
+  fiery_tracks_of_grimmag:
+    id: diamond_boots
+    display_name: "&5[ II ] &eFiery Tracks of Grimmor"
+    lv: 50
+  fiery_tracks_of_grimmag+1:
+    id: diamond_boots
+    display_name: "&5[ II ] &eFiery Tracks of Grimmor"
+    lv: 50
+  fiery_tracks_of_grimmag+2:
+    id: diamond_boots
+    display_name: "&5[ II ] &eFiery Tracks of Grimmor"
+    lv: 50
+  fiery_tracks_of_grimmag+3:
+    id: diamond_boots
+    display_name: "&5[ II ] &eFiery Tracks of Grimmor"
+    lv: 50
+  fiery_tracks_of_grimmag+4:
+    id: diamond_boots
+    display_name: "&5[ II ] &eFiery Tracks of Grimmor"
+    lv: 50
+  arachnas_venomous_revenge:
+    id: diamond_sword
+    display_name: "&5[ II ] &eAraksha`s Venomous Revenge"
+    lv: 50
+  arachnas_venomous_revenge+1:
+    id: diamond_sword
+    display_name: "&5[ II ] &eAraksha`s Venomous Revenge"
+    lv: 50
+  arachnas_venomous_revenge+2:
+    id: diamond_sword
+    display_name: "&5[ II ] &eAraksha`s Venomous Revenge"
+    lv: 50
+  arachnas_venomous_revenge+3:
+    id: diamond_sword
+    display_name: "&5[ II ] &eAraksha`s Venomous Revenge"
+    lv: 50
+  arachnas_venomous_revenge+4:
+    id: diamond_sword
+    display_name: "&5[ II ] &eAraksha`s Venomous Revenge"
+    lv: 50
+  arachnas_venomous_revenge_blood:
+    id: diamond_sword
+    display_name: "&6[ III ] &eAraksha`s Venomous Revenge"
+    lv: 50
+  arachnas_venomous_revenge_blood+1:
+    id: diamond_sword
+    display_name: "&6[ III ] &eAraksha`s Venomous Revenge"
+    lv: 50
+  arachnas_venomous_revenge_blood+2:
+    id: diamond_sword
+    display_name: "&6[ III ] &eAraksha`s Venomous Revenge"
+    lv: 50
+  arachnas_venomous_revenge_blood+3:
+    id: diamond_sword
+    display_name: "&6[ III ] &eAraksha`s Venomous Revenge"
+    lv: 50
+  arachnas_venomous_revenge_blood+4:
+    id: diamond_sword
+    display_name: "&6[ III ] &eAraksha`s Venomous Revenge"
+    lv: 50
+  heredurs_royal_power_hell:
+    id: diamond_helmet
+    display_name: "&5[ II ] &eHeredorn`s Royal Power"
+    lv: 50
+  heredurs_royal_power_hell+1:
+    id: diamond_helmet
+    display_name: "&5[ II ] &l&eHeredorn`s Royal Power"
+    lv: 50
+  heredurs_royal_power_hell+2:
+    id: diamond_helmet
+    display_name: "&5[ II ] &l&eHeredorn`s Royal Power"
+    lv: 50
+  heredurs_royal_power_hell+3:
+    id: diamond_helmet
+    display_name: "&5[ II ] &l&eHeredorn`s Royal Power"
+    lv: 50
+  heredurs_royal_power_hell+4:
+    id: diamond_helmet
+    display_name: "&5[ II ] &l&eHeredorn`s Royal Power"
+    lv: 50
+  heredurs_royal_power_blood:
+    id: diamond_helmet
+    display_name: "&6[ III ] &eHeredorn`s Royal Power"
+    lv: 50
+  heredurs_royal_power_blood+1:
+    id: diamond_helmet
+    display_name: "&6[ III ] &l&eHeredorn`s Royal Power"
+    lv: 50
+  heredurs_royal_power_blood+2:
+    id: diamond_helmet
+    display_name: "&6[ III ] &l&eHeredorn`s Royal Power"
+    lv: 50
+  heredurs_royal_power_blood+3:
+    id: diamond_helmet
+    display_name: "&6[ III ] &l&eHeredorn`s Royal Power"
+    lv: 50
+  heredurs_royal_power_blood+4:
+    id: diamond_helmet
+    display_name: "&6[ III ] &l&eHeredorn`s Royal Power"
+    lv: 50
+  bearachs_tormentor_blood:
+    id: netherite_sword
+    display_name: "&6[ III ] &l&cBEAROK`S TORMENTOR"
+    lv: 65
+  bearachs_tormentor_blood+1:
+    id: netherite_sword
+    display_name: "&6[ III ] &l&cBEAROK`S TORMENTOR"
+    lv: 65
+  bearachs_tormentor_blood+2:
+    id: netherite_sword
+    display_name: "&6[ III ] &l&cBEAROK`S TORMENTOR"
+    lv: 65
+  bearachs_tormentor_blood+3:
+    id: netherite_sword
+    display_name: "&6[ III ] &l&cBEAROK`S TORMENTOR"
+    lv: 65
+  bearachs_tormentor_blood+4:
+    id: netherite_sword
+    display_name: "&6[ III ] &l&cBEAROK`S TORMENTOR"
+    lv: 65
+  armor_of_unchained_death_god_blood:
+    id: netherite_chestplate
+    display_name: "&6[ III ] &c&lARMOR OF UNCHAINED DEATH GOD"
+    lv: 65
+  armor_of_unchained_death_god_blood+1:
+    id: netherite_chestplate
+    display_name: "&6[ III ] &c&lARMOR OF UNCHAINED DEATH GOD"
+    lv: 65
+  armor_of_unchained_death_god_blood+2:
+    id: netherite_chestplate
+    display_name: "&6[ III ] &c&lARMOR OF UNCHAINED DEATH GOD"
+    lv: 65
+  armor_of_unchained_death_god_blood+3:
+    id: netherite_chestplate
+    display_name: "&6[ III ] &c&lARMOR OF UNCHAINED DEATH GOD"
+    lv: 65
+  armor_of_unchained_death_god_blood+4:
+    id: netherite_chestplate
+    display_name: "&6[ III ] &c&lARMOR OF UNCHAINED DEATH GOD"
+    lv: 65
+  pants_of_unchained_death_god_blood:
+    id: netherite_leggings
+    display_name: "&6[ III ] &c&lPANTS OF UNCHAINED DEATH GOD"
+    lv: 65
+  pants_of_unchained_death_god_blood+1:
+    id: netherite_leggings
+    display_name: "&6[ III ] &c&lPANTS OF UNCHAINED DEATH GOD"
+    lv: 65
+  pants_of_unchained_death_god_blood+2:
+    id: netherite_leggings
+    display_name: "&6[ III ] &c&lPANTS OF UNCHAINED DEATH GOD"
+    lv: 65
+  pants_of_unchained_death_god_blood+3:
+    id: netherite_leggings
+    display_name: "&6[ III ] &c&lPANTS OF UNCHAINED DEATH GOD"
+    lv: 65
+  pants_of_unchained_death_god_blood+4:
+    id: netherite_leggings
+    display_name: "&6[ III ] &c&lPANTS OF UNCHAINED DEATH GOD"
+    lv: 65
+  the_heralds_burning_thunder_hell:
+    id: diamond_sword
+    display_name: "&5[ II ] &eThe Harbinger`s Burning Thunder"
+    lv: 50
+  the_heralds_burning_thunder_hell+1:
+    id: diamond_sword
+    display_name: "&5[ II ] &eThe Harbinger`s Burning Thunder"
+    lv: 50
+  the_heralds_burning_thunder_hell+2:
+    id: diamond_sword
+    display_name: "&5[ II ] &eThe Harbinger`s Burning Thunder"
+    lv: 50
+  the_heralds_burning_thunder_hell+3:
+    id: diamond_sword
+    display_name: "&5[ II ] &eThe Harbinger`s Burning Thunder"
+    lv: 50
+  the_heralds_burning_thunder_hell+4:
+    id: diamond_sword
+    display_name: "&5[ II ] &eThe Harbinger`s Burning Thunder"
+    lv: 50
+  the_heralds_burning_thunder_blood:
+    id: diamond_sword
+    display_name: "&6[ III ] &eThe Harbinger`s Burning Thunder"
+    lv: 50
+  the_heralds_burning_thunder_blood+1:
+    id: diamond_sword
+    display_name: "&6[ III ] &eThe Harbinger`s Burning Thunder"
+    lv: 50
+  the_heralds_burning_thunder_blood+2:
+    id: diamond_sword
+    display_name: "&6[ III ] &eThe Harbinger`s Burning Thunder"
+    lv: 50
+  the_heralds_burning_thunder_blood+3:
+    id: diamond_sword
+    display_name: "&6[ III ] &eThe Harbinger`s Burning Thunder"
+    lv: 50
+  the_heralds_burning_thunder_blood+4:
+    id: diamond_sword
+    display_name: "&6[ III ] &eThe Harbinger`s Burning Thunder"
+    lv: 50
+  sigrismarrs_eternal_ward_hell:
+    id: diamond_chestplate
+    display_name: "&5[ II ] &eSigrosmar`s Eternal Ward"
+    lv: 50
+  sigrismarrs_eternal_ward_hell+1:
+    id: diamond_chestplate
+    display_name: "&5[ II ] &eSigrosmar`s Eternal Ward"
+    lv: 50
+  sigrismarrs_eternal_ward_hell+2:
+    id: diamond_chestplate
+    display_name: "&5[ II ] &eSigrosmar`s Eternal Ward"
+    lv: 50
+  sigrismarrs_eternal_ward_hell+3:
+    id: diamond_chestplate
+    display_name: "&5[ II ] &eSigrosmar`s Eternal Ward"
+    lv: 50
+  sigrismarrs_eternal_ward_hell+4:
+    id: diamond_chestplate
+    display_name: "&5[ II ] &eSigrosmar`s Eternal Ward"
+    lv: 50
+  sigrismarrs_eternal_ward_blood:
+    id: diamond_chestplate
+    display_name: "&6[ III ] &eSigrosmar`s Eternal Ward"
+    lv: 50
+  sigrismarrs_eternal_ward_blood+1:
+    id: diamond_chestplate
+    display_name: "&6[ III ] &eSigrosmar`s Eternal Ward"
+    lv: 50
+  sigrismarrs_eternal_ward_blood+2:
+    id: diamond_chestplate
+    display_name: "&6[ III ] &eSigrosmar`s Eternal Ward"
+    lv: 50
+  sigrismarrs_eternal_ward_blood+3:
+    id: diamond_chestplate
+    display_name: "&6[ III ] &eSigrosmar`s Eternal Ward"
+    lv: 50
+  sigrismarrs_eternal_ward_blood+4:
+    id: diamond_chestplate
+    display_name: "&6[ III ] &eSigrosmar`s Eternal Ward"
+    lv: 50
+  gorgonskin_leather_boots_blood:
+    id: netherite_boots
+    display_name: "&6[ III ] &l&cGORGONSKIN LEATHER BOOTS"
+    lv: 65
+  gorgonskin_leather_boots_blood+1:
+    id: netherite_boots
+    display_name: "&6[ III ] &l&cGORGONSKIN LEATHER BOOTS"
+    lv: 65
+  gorgonskin_leather_boots_blood+2:
+    id: netherite_boots
+    display_name: "&6[ III ] &l&cGORGONSKIN LEATHER BOOTS"
+    lv: 65
+  gorgonskin_leather_boots_blood+3:
+    id: netherite_boots
+    display_name: "&6[ III ] &l&cGORGONSKIN LEATHER BOOTS"
+    lv: 65
+  gorgonskin_leather_boots_blood+4:
+    id: netherite_boots
+    display_name: "&6[ III ] &l&cGORGONSKIN LEATHER BOOTS"
+    lv: 65
+  abyssal_treasure_helmet_blood:
+    id: netherite_helmet
+    display_name: "&6[ III ] &l&cABYSSAL TREASURE HELMET"
+    lv: 65
+  abyssal_treasure_helmet_blood+1:
+    id: netherite_helmet
+    display_name: "&6[ III ] &l&cABYSSAL TREASURE HELMET"
+    lv: 65
+  abyssal_treasure_helmet_blood+2:
+    id: netherite_helmet
+    display_name: "&6[ III ] &l&cABYSSAL TREASURE HELMET"
+    lv: 65
+  abyssal_treasure_helmet_blood+3:
+    id: netherite_helmet
+    display_name: "&6[ III ] &l&cABYSSAL TREASURE HELMET"
+    lv: 65
+  abyssal_treasure_helmet_blood+4:
+    id: netherite_helmet
+    display_name: "&6[ III ] &l&cABYSSAL TREASURE HELMET"
+    lv: 65
+  Krakens_Abyssal_Aegis:
+    id: netherite_chestplate
+    display_name: "&c&lSTORM-EYE KRAKEN BREASTPLATE"
     lv: 90
-  fyrgons_ring_of_fire:
-    id: TNT_MINECART
-    display_name: '&6[ III ] &l&cFYRGON`S RING OF FIRE'
-    lv: 100
+  Krakens_Tidewalkers:
+    id: diamond_boots
+    display_name: "&e&lTentacle-Twine Boots"
+    lv: 80
+  amarok_helmet_hard:
+    id: netherite_helmet
+    display_name: "&c[ H ] &c&lAMAROK HELMET"
+    lv: 65
+  blood_mage_leggings_hard:
+    id: netherite_leggings
+    display_name: "&c[ H ] &c&lBLOOD MAGE LEGGINGS"
+    lv: 65
+  eternal_blizzard_legplates_blood:
+    id: netherite_leggings
+    display_name: '&6[ III ] &eEternal Blizzard Legplates'
+    lv: 50
+  everfrost_sovereign_crown_hell:
+    id: diamond_helmet
+    display_name: '&5[ II ] &eEverfrost Sovereign Crown'
+    lv: 50
+
+  # Demon Tower - Floor I
+  valgroth_soulreaper:
+    id: diamond_sword
+    display_name: '&9[ I ] &e&lValgroth`s Soulreaper'
+    lv: 50
+  valgroth_dark_crown:
+    id: netherite_helmet
+    display_name: '&9[ I ] &c&lVALGROTH`S DARK CROWN'
+    lv: 65
+
+  # Demon Tower - Floor II
+  infernal_legion_armor:
+    id: diamond_chestplate
+    display_name: '&5[ II ] &e&lInfernal Legion Armor'
+    lv: 55
+  azhramorth_throne_crown:
+    id: netherite_helmet
+    display_name: '&5[ II ] &c&lAZHRA`MORTH`S THRONE CROWN'
+    lv: 70
+
+  # Demon Tower - Floor III
+  korthamoth_void_crown:
+    id: netherite_helmet
+    display_name: '&6[ III ] &c&lKORTHAMOTH`S VOID EYE CROWN'
+    lv: 80
+
+  # Demon Tower - Floor IV
+  vharzhul_ripper_blade:
+    id: diamond_sword
+    display_name: '&c[ IV ] &e&lVhar`Zhul`s Ripper Blade'
+    lv: 75
+  vharzhul_ripper_crown:
+    id: netherite_helmet
+    display_name: '&c[ IV ] &c&lVHAR`ZHUL`S RIPPER CROWN'
+    lv: 90
+  acheron_shadow_mantle:
+    id: netherite_chestplate
+    display_name: '&c[ IV ] &c&lACHERON`S SHADOW MANTLE'
+    lv: 90
+  acheron_shadow_blade:
+    id: netherite_sword
+    display_name: '&c[ IV ] &c&lACHERON`S SHADOW BLADE'
+    lv: 90
